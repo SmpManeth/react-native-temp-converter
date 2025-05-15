@@ -17,11 +17,8 @@ export default function App() {
   const [currentBackgroundImage, setCurrentBackgroundImage] = useState(HotBackground);
 
   useEffect(() => {
-    if (isIceTemperature(inputValue , currentUnit)) {
-      setCurrentBackgroundImage(ColdBackground);
-    } else {
-      setCurrentBackgroundImage(HotBackground);
-    }
+    const isCold = isIceTemperature(inputValue , currentUnit);
+    setCurrentBackgroundImage(isCold ? ColdBackground : HotBackground);
   }, [inputValue , currentUnit]);
 
 
